@@ -9,6 +9,7 @@ const registerUser = (req, res) => {
     res.status(400);
     throw new Error("Please include all fields");
   }
+  console.log(req.body);
   res.send("Register Route");
 };
 
