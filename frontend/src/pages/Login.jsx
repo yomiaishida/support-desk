@@ -15,7 +15,7 @@ function Login() {
 
   const dispatch = useDispatch();
 
-  const { user, isloading, isSuccess, message } = useSelector(
+  const { user, isLoading, isSuccess, message } = useSelector(
     (state) => state.auth
   );
 
