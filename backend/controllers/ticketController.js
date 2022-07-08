@@ -53,8 +53,6 @@ const getTicket = asyncHandler(async (req, res) => {
 const createTicket = asyncHandler(async (req, res) => {
   const { product, description } = req.body;
 
-  console.log(req.body);
-
   if (!product || !description) {
     res.status(400);
     throw new Error("Please add a product and description");
@@ -75,7 +73,7 @@ const createTicket = asyncHandler(async (req, res) => {
     status: "new",
   });
 
-  res.status(20).json(ticket);
+  res.status(201).json(ticket);
 });
 
 module.exports = {
