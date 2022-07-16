@@ -30,10 +30,6 @@ function NewTicket() {
       navigate("/tickets");
     }
 
-    if (isLoading) {
-      return <Spinner />;
-    }
-
     dispatch(reset());
   }, [dispatch, navigate, isLoading, isError, isSuccess, message]);
 
@@ -41,6 +37,10 @@ function NewTicket() {
     e.preventDefault();
     dispatch(createTicket({ product, description }));
   };
+
+  if (isLoading) {
+    return <Spinner />;
+  }
 
   return (
     <>
@@ -67,6 +67,9 @@ function NewTicket() {
               id="product"
               onChange={(e) => setProduct(e.target.value)}
             >
+              <option disabled value="">
+                Select a product
+              </option>
               <option value="iPhone">iPhone</option>
               <option value="Macbook Pro">Macbook Pro</option>
               <option value="iMac">iMac</option>

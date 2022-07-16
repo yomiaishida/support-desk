@@ -20,7 +20,7 @@ function Tickets() {
   }, [dispatch, isSuccess]);
 
   useEffect(() => {
-    dispatch(getTickets);
+    dispatch(getTickets());
   }, [dispatch]);
 
   if (isLoading) {
